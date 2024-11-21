@@ -17,6 +17,7 @@ public class AppWalletService implements WalletService{
     private final WalletRepository walletRepository;
     @Override
     public WalletDepositResponse deposit(WalletDepositRequest walletDepositRequest) throws WalletNotFoundException {
+        //1. retrieve wallet
         Wallet wallet = walletRepository.findById(walletDepositRequest.getId())
                 .orElseThrow(()-> new WalletNotFoundException("Wallet not found", walletDepositRequest.getId()));
         String.format("Wallet found with id %s", wallet.getId());

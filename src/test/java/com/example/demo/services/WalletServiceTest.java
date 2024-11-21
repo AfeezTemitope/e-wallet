@@ -24,10 +24,10 @@ public class WalletServiceTest {
     private WalletService walletService;
 
     @Test
-    @Sql(scripts = {"/db/data.sql"})
+    //@Sql(scripts = {"/db/data.sql"})
     public void testThatWalletServiceCanDeposit() throws WalletNotFoundException {
         Long walledId = 200L;
-        BigDecimal depositAmount = new BigDecimal("1000.00");
+        BigDecimal depositAmount = new BigDecimal("5000.00");
         WalletDepositRequest walletDepositRequest = new WalletDepositRequest();
         walletDepositRequest.setId(walledId);
         walletDepositRequest.setAmount(depositAmount);
