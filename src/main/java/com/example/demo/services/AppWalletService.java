@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import static com.example.demo.dto.response.TransactionStatus.SUCCESS;
+
 @Service
 @AllArgsConstructor
 public class AppWalletService implements WalletService{
@@ -24,7 +26,7 @@ public class AppWalletService implements WalletService{
         wallet.setBalance(wallet.getBalance().add(walletDepositRequest.getAmount()));
         wallet = walletRepository.save(wallet);
         WalletDepositResponse walletDepositResponse = new WalletDepositResponse();
-        walletDepositResponse.setStatus("SUCCESS");
+        walletDepositResponse.setStatus(SUCCESS.toString());
         walletDepositResponse.setAmount(walletDepositRequest.getAmount().toString());
        // modelMapper.map(walletDepositRequest, Wallet.class);
         return walletDepositResponse;
