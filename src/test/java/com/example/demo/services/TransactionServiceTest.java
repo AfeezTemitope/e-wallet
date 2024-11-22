@@ -37,9 +37,9 @@ public class TransactionServiceTest {
 
     private static TransactionRequest getTransactionRequest(String accountNumber, BigDecimal transactionAmount, String transactionType) {
         TransactionRequest transactionRequest = new TransactionRequest();
-        transactionRequest.setAccountNumber(accountNumber);
+        transactionRequest.setReceiverAccountNumber(accountNumber);
         transactionRequest.setTransactionAmount(transactionAmount);
-        transactionRequest.setTransactionType(transactionType);
+        transactionRequest.setSenderAccountNumber(transactionType);
         transactionRequest.setTransactionDate(LocalDate.now());
         return transactionRequest;
     }

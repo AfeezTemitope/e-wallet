@@ -10,12 +10,11 @@ import java.time.LocalDate;
 @Setter
 public class TransactionRequest {
 
-    private Long transactionId;
-    private String transactionType;
+
     private String transactionStatus;
     private BigDecimal transactionAmount;
     private LocalDate transactionDate;
-    private String accountNumber;
+    private String description;
     private String senderAccountNumber;
     private String receiverAccountNumber;
 }
